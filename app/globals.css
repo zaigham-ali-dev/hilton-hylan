@@ -10,6 +10,104 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+}
+
+@theme {
+  --animate-gold-pulse-consistent: gold-pulse-consistent 3.5s ease-in-out infinite;
+  --animate-gold-pulse-consistent-slow: gold-pulse-consistent-slow 4s ease-in-out infinite;
+  --animate-icon-glow-consistent: icon-glow-consistent 3.5s ease-in-out infinite;
+  --animate-icon-glow-consistent-slow: icon-glow-consistent 4s ease-in-out infinite;
+  --animate-timeline-dot-horizontal: travel-dot-horizontal 4.5s linear infinite, timeline-glow-pulse 1.2s ease-in-out infinite;
+  --animate-timeline-dot-vertical: travel-dot-vertical 5s linear infinite, timeline-glow-pulse 1.2s ease-in-out infinite;
+
+  @keyframes gold-pulse-consistent {
+
+    0%,
+    100% {
+      box-shadow: 0 0 8px rgba(212, 178, 140, 0.15), inset 0 0 6px rgba(212, 178, 140, 0.08);
+      border-color: rgba(212, 178, 140, 0.35);
+    }
+
+    50% {
+      box-shadow: 0 0 18px rgba(212, 178, 140, 0.45), inset 0 0 10px rgba(212, 178, 140, 0.2);
+      border-color: rgba(212, 178, 140, 0.7);
+    }
+  }
+
+  @keyframes gold-pulse-consistent-slow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(212, 178, 140, 0.15), inset 0 0 8px rgba(212, 178, 140, 0.08);
+      border-color: rgba(212, 178, 140, 0.35);
+    }
+
+    50% {
+      box-shadow: 0 0 22px rgba(212, 178, 140, 0.45), inset 0 0 14px rgba(212, 178, 140, 0.2);
+      border-color: rgba(212, 178, 140, 0.7);
+    }
+  }
+
+  @keyframes icon-glow-consistent {
+
+    0%,
+    100% {
+      filter: drop-shadow(0 0 2px rgba(212, 178, 140, 0.3));
+      opacity: 0.85;
+    }
+
+    50% {
+      filter: drop-shadow(0 0 8px rgba(212, 178, 140, 0.7));
+      opacity: 1;
+    }
+  }
+
+  @keyframes travel-dot-horizontal {
+    0% {
+      left: 0%;
+      opacity: 0;
+    }
+
+    6%,
+    94% {
+      opacity: 1;
+    }
+
+    100% {
+      left: 100%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes travel-dot-vertical {
+    0% {
+      top: 0%;
+      opacity: 0;
+    }
+
+    6%,
+    94% {
+      opacity: 1;
+    }
+
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes timeline-glow-pulse {
+
+    0%,
+    100% {
+      box-shadow: 0 0 8px 3px rgba(212, 178, 140, 0.6), 0 0 20px 6px rgba(212, 178, 140, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 14px 6px rgba(212, 178, 140, 0.9), 0 0 32px 12px rgba(212, 178, 140, 0.5);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +121,194 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Golden spinning arc animation for the arrow circle */
+@keyframes spin-golden-arc {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.arrow-circle-glow {
+  position: relative;
+}
+
+.arrow-circle-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg,
+      transparent 40%,
+      rgba(212, 178, 140, 0.3) 60%,
+      #D4B28C 80%,
+      #ffffff 100%);
+  animation: spin-golden-arc 2s linear infinite;
+  z-index: -1;
+}
+
+.arrow-circle-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  background: #111;
+  z-index: -1;
+}
+
+/* Card Border Golden Glow animation */
+.card-border-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-border-glow::before {
+  content: '';
+  position: absolute;
+  width: 220%;
+  height: 220%;
+  top: -60%;
+  left: -60%;
+  background: conic-gradient(from 0deg,
+      transparent 45%,
+      rgba(212, 178, 140, 0.15) 65%,
+      #D4B28C 85%,
+      #ffffff 100%);
+  animation: spin-golden-arc 7s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card-border-glow-inner {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+/* Newsletter container spinning golden border */
+.newsletter-border-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-border-glow::before {
+  content: '';
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+  background: conic-gradient(from 0deg,
+      transparent 30%,
+      rgba(139, 105, 59, 0.1) 45%,
+      rgba(139, 105, 59, 0.5) 70%,
+      #8B693B 85%,
+      #b38b4d 92%,
+      transparent 100%);
+  animation: spin-golden-arc 8s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Premium gold breathing/pulse animation for statistics icons */
+@keyframes gold-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(212, 178, 140, 0.2), inset 0 0 6px rgba(212, 178, 140, 0.1);
+    border: 1px solid rgba(212, 178, 140, 0.4);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 16px rgba(212, 178, 140, 0.45), inset 0 0 8px rgba(212, 178, 140, 0.15);
+    border: 1px solid rgba(212, 178, 140, 0.75);
+    transform: scale(1.02);
+  }
+}
+
+.gold-glowing-circle {
+  transition: all 0.5s ease-in-out;
+  animation: gold-pulse 3.5s ease-in-out infinite;
+}
+
+/* Golden wave animation sliding across the screen */
+@keyframes move-wave-across {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(100vw, 0, 0);
+  }
+}
+
+.scrolling-wave-item {
+  animation: move-wave-across 14s linear infinite;
+  will-change: transform;
+}
+
+
+
+/* Twinkling Stars Animation */
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px 3px rgba(212, 178, 140, 0.8);
+  }
+}
+
+.star-twinkle {
+  animation: twinkle var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.filter-box-glow {
+  position: relative;
+  border-radius: 1rem;
+  background: #111111;
+  overflow: hidden;
+}
+
+.filter-box-glow::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(from 0deg,
+      transparent 50%,
+      rgba(212, 178, 140, 0.3) 65%,
+      rgba(212, 178, 140, 0.7) 80%,
+      #D4B28C 90%,
+      #fff 100%);
+  animation: spin-golden-arc 2s linear infinite;
+  z-index: 0;
+}
+
+.filter-box-glow::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #111111;
+  border-radius: calc(1rem - 2px);
+  z-index: 0;
+}
+
+.filter-box-glow>* {
+  position: relative;
+  z-index: 1;
 }
