@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hilton Hyland — Luxury Real Estate Experience
 
-## Getting Started
+A modern real estate website concept inspired by the world of luxury properties, architectural excellence, and premium living.
 
-First, run the development server:
+**Explore the Experience:** Discover a digital showcase for exceptional homes, distinctive properties, and high-end real estate.
+
+---
+
+## A Different Perspective on Real Estate
+
+Hilton Hyland is a luxury real estate web project focused on presenting premium properties through an elegant digital experience.
+
+The website combines sophisticated visual design, immersive property imagery, and intuitive navigation to create a refined way to explore luxury homes and real estate listings.
+
+## The Experience
+
+- **Property Discovery** — Explore luxury homes and featured real estate.
+- **Property Showcases** — Present architectural details and distinctive property features.
+- **Location Exploration** — Organize property discovery around locations and desirable neighborhoods.
+- **Luxury-Focused Design** — A dark visual direction with refined typography and carefully composed layouts.
+- **Responsive Experience** — Adapt the interface to desktop, tablet, and mobile devices.
+- **Motion & Interaction** — Use considered transitions and scroll-based animations where implemented.
+- **Dedicated Pages** — Organize property information, company details, contact information, and real estate content.
+
+## Design Direction
+
+The visual direction is built around three principles:
+
+**Elegance** — A restrained, premium interface that lets the properties take center stage.
+
+**Immersion** — Large imagery, thoughtful spacing, and motion that enhance property discovery.
+
+**Clarity** — Straightforward navigation and organized content for a seamless browsing experience.
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Next.js | Web application framework |
+| React | Component-based user interface |
+| TypeScript | Type-safe development |
+| CSS / Tailwind CSS | Styling and responsive layouts |
+| GSAP | Animation and scroll interactions, if configured |
+| Vercel | Deployment platform, if deployed |
+
+## Project Structure
+
+```text
+hilton-hylan/
+├── app/             # Application pages and routes
+├── components/      # Reusable interface components
+├── public/          # Images and static assets
+├── package.json     # Project dependencies and scripts
+├── next.config.ts   # Next.js configuration
+├── tsconfig.json    # TypeScript configuration
+└── README.md        # Project documentation
+```
+
+## Run Locally
+
+### Requirements
+
+- Node.js
+- npm
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+Navigate to the project:
+
+```bash
+cd hilton-hylan
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Goals
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project explores how a luxury real estate brand can translate its visual identity into a polished digital experience.
 
-## Learn More
+The focus is on presentation, usability, responsive design, and creating a premium environment in which property imagery and information work together.
 
-To learn more about Next.js, take a look at the following resources:
+## Future Possibilities
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- More detailed property listing pages
+- Advanced property search and filtering
+- Interactive location exploration
+- Richer property galleries
+- Improved motion and page transitions
+- Property inquiry and lead-generation workflows
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+No license has been specified for this repository. All rights are reserved by default unless a license is added.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Exceptional properties deserve an exceptional digital experience.*
